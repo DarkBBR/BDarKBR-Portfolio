@@ -1,0 +1,115 @@
+/* Animações */
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%, 10% {
+    width: 0;
+  }
+  45%, 55% {
+    width: 6.2em;
+  }
+  90%, 100% {
+    width: 0;
+  }
+}
+
+/* Estilização do Loader */
+.terminal-loader {
+  border: 0.1em solid #333;
+  background-color: #1a1a1a;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  padding: 1.5em 1em;
+  width: 80%; /* Tornar responsivo */
+  max-width: 300px; /* Limite máximo para telas maiores */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px; /* Aumentar o arredondamento para estética */
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out; /* Transição suave para mudanças de tamanho */
+}
+
+/* Cabeçalho do Terminal */
+.terminal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.8em; /* Ajuste para melhor proporção */
+  background-color: #333;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 0 0.6em;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Controles do Terminal */
+.terminal-controls {
+  display: flex;
+}
+
+.control {
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.5em;
+  border-radius: 50%;
+  background-color: #777;
+}
+
+.control.close {
+  background-color: #e33;
+}
+
+.control.minimize {
+  background-color: #ee0;
+}
+
+.control.maximize {
+  background-color: #0b0;
+}
+
+/* Título do Terminal */
+.terminal-title {
+  color: #eee;
+  font-size: 0.9em;
+}
+
+/* Texto de Carregamento */
+.loader-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.2em solid green;
+  animation: typeAndDelete 4s steps(11) infinite, blinkCursor 0.5s step-end infinite alternate;
+  margin-top: 2em;
+  font-size: 1.2em; /* Texto levemente maior para melhor visibilidade */
+}
+
+/* Responsividade para Telas Pequenas */
+@media (max-width: 480px) {
+  .terminal-loader {
+    width: 90%; /* Ocupa mais espaço em telas pequenas */
+    padding: 1em;
+    font-size: 0.9em; /* Reduz levemente o tamanho da fonte */
+  }
+
+  .loader-text {
+    font-size: 1em; /* Ajuste proporcional para o texto */
+  }
+}
+
+/* Responsividade para Telas Grandes */
+@media (min-width: 1024px) {
+  .terminal-loader {
+    max-width: 400px; /* Expande um pouco mais em telas grandes */
+  }
+}
