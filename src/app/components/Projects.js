@@ -31,14 +31,14 @@ const projects = [
 ];
 
 const Card = ({ title, subtitle, link }) => (
-  <div class="grid-container">
-    <div class="container">
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
         className="container group"
       >
+  <div class="grid-container">
+    <div class="container">
         <div className="tracker" />
         <div id="card">
           <div className="card-content">
@@ -57,9 +57,9 @@ const Card = ({ title, subtitle, link }) => (
             </div>
           </div>
         </div>
-      </a>
     </div>
   </div>
+      </a>
 );
 
 export default function ProjectsSection() {
