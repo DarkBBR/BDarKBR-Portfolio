@@ -10,6 +10,15 @@
     height: 245px;
   }
   
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); 
+    gap: 20px; /* Espaço entre os cartões */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
   #card {
     position: absolute;
     inset: 0;
